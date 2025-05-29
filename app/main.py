@@ -2,7 +2,7 @@ from kivy.app import App
 from kivy.uix.screenmanager import Screen
 from kivy.uix.boxlayout import BoxLayout
 from kivy.lang import Builder
-from Assignment4.app.logic_layer import TaskManager
+from app.logic_layer import TaskManager
 from kivy.factory import Factory
 import os
 from dotenv import load_dotenv

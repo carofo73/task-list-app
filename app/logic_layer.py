@@ -1,4 +1,5 @@
-from Assignment4.app.db_layer import Database
+from app.db_layer import Database
+
 
 class TaskManager:
     def __init__(self, db_config):
@@ -22,7 +23,7 @@ class TaskManager:
             return self.db.add_task(task_text)
         except Exception as e:
             raise RuntimeError("Failed to add task: " + str(e))
-    
+
     def update_task(self, task_text, task_id):
         """Update an existing task in the database."""
         try:
