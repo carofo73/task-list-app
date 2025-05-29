@@ -1,0 +1,41 @@
+<ToDoScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+
+        TextInput:
+            id: task_input
+            hint_text: "Enter a new task"
+            size_hint_y: None
+            height: 40
+
+        Button:
+            text: "Add Task"
+            size_hint_y: None
+            height: 40
+            on_press: root.add_task()
+
+        ScrollView:
+            BoxLayout:
+                id: task_list
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: 10
+
+<TaskItem>:
+    size_hint_y: None
+    height: 40
+    BoxLayout:
+        Label:
+            id: task_label
+            text: ""
+        Button:
+            text: "Delete"
+            size_hint_x: None
+            width: 80
+            on_press: app.root.delete_task(root)
+        Button:
+            text: "Update"
+            size_hint_x: None
+            width: 80
+            on_press: app.root.open_popup(root)

@@ -1,0 +1,30 @@
+#:kivy 2.3.1
+
+<UpdatePopup@Popup>:
+    size_hint: .8, .4
+    auto_dismiss: False
+    current_text: ""
+    BoxLayout:
+        orientation: 'vertical'
+        padding: dp(20)
+        spacing: dp(10)
+        
+        TextInput:
+            id: update_input
+            text: root.current_text
+            on_text: root.current_text = self.text
+        
+        BoxLayout:
+            size_hint_y: None
+            height: dp(40)
+            spacing: dp(10)
+            
+            Button:
+                text: "Cancel"
+                on_release: root.dismiss()
+                
+            Button:
+                text: "Update"
+                on_press: app.root.update_task(root.task, root.current_text)
+                on_release: root.dismiss()
+
